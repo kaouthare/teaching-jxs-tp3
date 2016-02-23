@@ -17,7 +17,7 @@
             <label> Selection de Pokemon
             <select name="recherche" ng-model="pokemonreserch">
 
-                <option value="{{pokemons.nom}}"  ng-repeat="pokemons in pokemon " >  {{pokemons.nom}}</option>
+                <option value="{{pokemons.nom}}"  ng-repeat="pokemons in pokemon | filter:pokemons.nom" >  {{pokemons.nom}}</option>
 
             </select>
                 {{pokemonreserch}}
@@ -28,10 +28,10 @@
 		<!-- Pokémon information -->
         <label>Pokemon :
 
-        </label><input type="text" name="input" ng-model="pokemon.text">
+        </label><input type="text" name="input" ng-model="pokemons.nom">
 		<div></div>
         <label>
-        text = {{pokemon.text}}<br/>
+        text = {{pokemons.nom}}<br/>
         </label>
 	</div>
 
