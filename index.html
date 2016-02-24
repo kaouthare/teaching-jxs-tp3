@@ -15,12 +15,12 @@
 		<!-- Search -->
 		<div ng-controller="repeatController">
             <label> Selection de Pokemon
-            <select name="recherche" ng-model="pokemonreserch">
+            <select name="recherche" ng-model="pokemonSelected">
 
-                <option value="{{pokemons.nom}}"  ng-repeat="pokemons in pokemon | filter:pokemons.nom" >  {{pokemons.nom}}</option>
-
+              <!-- <option value="{{pokemons.nom}}"  ng-repeat="pokemons in pokemon | filter:pokemons.nom" >  {{pokemons.nom}}</option> -->
+                <option  ng-repeat="pokemon in pokemonSite | filter:pokemonreserch" >{{pokemon.name}} </option>
             </select>
-                {{pokemonreserch}}
+                {{pokemonSelected}}
             </label>
             <br>
             <button ng-click="log.log(pokemonreserch)">
@@ -32,12 +32,14 @@
 		<!-- Pokémon information -->
         <label>Pokemon :
 
-        </label><input type="text" name="input" ng-model="pokemons.nom">
+        </label><input type="text" name="input" ng-model="pokemonreserch">
 		<div></div>
         <label>
         text = {{pokemons.nom}}<br/>
         </label>
+
 	</div>
+
 
     <!-- Dependencies -->
     <script src="js/jquery.min.js"></script>

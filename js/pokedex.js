@@ -12,6 +12,11 @@ pokeApp.controller('repeatController',
                 {id:4, nom: "charmandar"}
             ];
             $scope.log = $log;
+            $scope.pokemonSelected="blastoise";
+            $http.get("http://www.pokeapi.co/api/v1/pokedex/1/").then(function(response){
+                $scope.pokemonSite=response.data.pokemon;
+            });
+
 
     });
 
