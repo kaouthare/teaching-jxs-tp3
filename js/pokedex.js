@@ -4,7 +4,7 @@ pokeApp.config(['$resourceProvider', function($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;}]);
 
 pokeApp.controller('repeatController',
-        function($scope,$log,$http, $resource){
+        function($scope, $log, $http, $resource){
             $scope.pokemon=[
                 {id: 1, nom: "picachu"},
                 {id:2, nom: "bulbasor"},
@@ -22,10 +22,18 @@ pokeApp.controller('repeatController',
                 $scope.typepok= pokemon.weakness;
             })
 
-
-
-
     });
+pokeApp.controller('infosPokemon', function($scope, $loq, $resource){
+
+            var Pokemons = $resource('http://pokeapi.co/api/v1/type/:id/');
+            Pokemons.get({id:3}, function(pokemon){
+                $log.info(pokemon);
+
+                $scope.idpoke= pokemon.id;
+                $scope.nompoke= pokemon.name;
+                $scope.typepoks= pokemon.weakness;
+            })
+});
 
 
 var pokeApiUrl = "http://pokeapi.co/";
