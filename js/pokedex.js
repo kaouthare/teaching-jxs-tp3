@@ -22,8 +22,7 @@ pokeApp.controller('repeatController',
                 $scope.typepok= pokemon.weakness;
             })
 
-    });
-pokeApp.controller('infosPokemon', function($scope, $loq, $resource){
+    }).controller('infosPokemon', function($scope, $resource,$log){
 
             var Pokemons = $resource('http://pokeapi.co/api/v1/type/:id/');
             Pokemons.get({id:3}, function(pokemon){
