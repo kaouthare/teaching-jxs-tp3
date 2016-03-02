@@ -19,13 +19,12 @@
 
               <!-- <option value="{{pokemons.nom}}"  ng-repeat="pokemons in pokemon | filter:pokemons.nom" >  {{pokemons.nom}}</option> -->
                 <option  ng-repeat="pokemon in pokemonSite | filter:pokemonreserch" >{{pokemon.name}} </option>
+                <br>
             </select>
                 {{pokemonSelected}}
+                <label > id pokemon : {{pokemonSelected.resource_uri}} </label>
             </label>
             <br>
-            <button ng-click="log.log(pokemonreserch)">
-                Go!
-            </button>
 
 
 		<!-- Pokémon information -->
@@ -33,11 +32,19 @@
 
              </label>
             <input type="text" name="input" ng-model="pokemonreserch">
+            <button ng-click="log.log(pokemonreserch)">
+                Go!
+            </button>
 
             <label>
+
              text = {{typepok}}<br/>
              </label>
         </div>
+
+ <br>
+        <br>
+
 
   <div ng-controller="infosPokemon">
 
@@ -50,8 +57,11 @@
               <label>Nom Pokemon</label>
               <input type="text" name="input" value="{{nompoke}}">
               <br>
+                <label> Image pokemon</label>
+
               <label>Failblesses Pokemon</label>
               {{typepoks}}
+
         </div>
 
 

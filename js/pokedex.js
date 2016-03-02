@@ -13,15 +13,16 @@ pokeApp.controller('repeatController',
             ];
             $scope.log = $log;
             //$scope.pokemonSelected="blastoise";
-            /*$http.get("http://pokeapi.co/api/v1/pokedex/1").then(function(response){
+            $http.get("http://pokeapi.co/api/v1/pokedex/1").then(function(response){
                 $scope.pokemonSite=response.data.pokemon;
-            });*/
+            });
+            /*
             var Pokemons= $resource('http://pokeapi.co/api/v1/type/:id/');
             Pokemons.get({id:2}, function(pokemon){
                 $log.info(pokemon);
                 $scope.typepok= pokemon.weakness;
             })
-
+*/
     }).controller('infosPokemon', function($scope, $resource,$log){
 
             var Pokemons = $resource('http://pokeapi.co/api/v1/type/:id/');
@@ -36,3 +37,5 @@ pokeApp.controller('repeatController',
 
 
 var pokeApiUrl = "http://pokeapi.co/";
+
+
