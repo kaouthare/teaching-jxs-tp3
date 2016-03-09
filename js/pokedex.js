@@ -35,7 +35,7 @@ pokeApp.controller('repeatController',
             })
 });
 
-
+var test ;
 var pokeApiUrl = "http://pokeapi.co/";
 
 
