@@ -14,32 +14,58 @@
 
 		<!-- Search -->
 		<div ng-controller="repeatController">
-            <label> Selection de Pokemon
+            <label> Selection de Pokemon </label>
             <select name="recherche" ng-model="pokemonSelected">
 
               <!-- <option value="{{pokemons.nom}}"  ng-repeat="pokemons in pokemon | filter:pokemons.nom" >  {{pokemons.nom}}</option> -->
-                <option  ng-repeat="pokemon in pokemonSite | filter:pokemonreserch" >{{pokemon.name}} </option>
-                <br>
+                <option  ng-repeat="pokemon in pokemonSite | filter:pokemonreserch" value="{{pokemon.entry_number}}" >{{pokemon.pokemon_species.name}} </option>
+
             </select>
+
                 {{pokemonSelected}}
-                <label > id pokemon : {{pokemonSelected.resource_uri}} </label>
+                <br>
+                <label>Pokemon (aide à la selection):
+
+                </label>
+                <input type="text" name="input" ng-model="pokemonreserch"><label>
+
             </label>
             <br>
+            <button ng-click="go(pokemonSelected)">Go !</button>
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <td>{{pokemonObj.id}}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{pokemonObj.name}}</td>
+                </tr>
+                <tr>
+                    <th>Habitation</th>
+                    <td>{{pokemonObj.habitat.name}}</td>
+                </tr>
+                <tr>
+                    <th>Generation</th>
+                    <td>{{pokemonObj.generation.name}}</td>
+                </tr>
+            </table>
 
+            <img src="http://img.pokemondb.net/artwork/{{pokemonObj.name}}.jpg">
 
 		<!-- Pokémon information -->
-            <label>Pokemon :
 
-             </label>
-            <input type="text" name="input" ng-model="pokemonreserch">
-            <button ng-click="log.log(pokemonreserch)">
+          <!-- <button ng-click="log.log(pokemonreserch)">
                 Go!
             </button>
+            text = {{typepok}}
+            -->
 
-            <label>
 
-             text = {{typepok}}<br/>
-             </label>
+
+
+                <br/>
+
         </div>
 
  <br>
@@ -61,6 +87,10 @@
 
               <label>Failblesses Pokemon</label>
               {{typepoks}}
+
+  </div>
+
+        <div ng-controller="affichage">
 
         </div>
 
