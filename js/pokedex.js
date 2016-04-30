@@ -39,6 +39,7 @@ pokeApp.controller('repeatController',
                     //mettre la liste dans une variable qui va être utilisée plus tard
                     $scope.pokemonSite = response.data.pokemon_entries;
                 });
+                //le ng click de go va rediriger vers la fonction qui cherche le pokemon qui a l'id idpoke
                 $scope.go = function(idpoke){
                     $scope.pokemonObj = searchPokemon.get({id:idpoke});
                 }
@@ -61,6 +62,8 @@ pokeApp.controller('repeatController',
                 $scope.typepoks= pokemon.weakness;
             })
 });
+
+//nouvelle directive q15
 pokeApp.directive('ngPokedex', function() {
                         return {
                           restrict: 'A', //Comment on va utiliser la directive (A/E/C/M)
